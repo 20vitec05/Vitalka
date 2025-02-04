@@ -1,0 +1,24 @@
+{
+  "citation": "",
+  "description": "",
+  "features": {
+    "id": {
+      "dtype": "int64",
+      "_type": "Value"
+    },
+    "autotrain_text": [
+      {
+        "content": {
+          "dtype": "string",
+          "_type": "Value"
+        },
+        "role": {
+          "dtype": "string",
+          "_type": "Value"
+        }
+      }
+    ]
+  },
+  "homepage": "",
+  "license": ""
+}
