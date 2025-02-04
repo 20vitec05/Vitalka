@@ -1,0 +1,37 @@
+base_model: BSC-LT/salamandra-2b-instruct
+project_name: Vitalka
+json_path: result.json
+
+hub:
+  username: Tatanos
+  token: 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
+  push_to_hub: true
+
+params:
+  block_size: 512
+  model_max_length: 2048
+  max_prompt_length: 256
+  epochs: 1
+  batch_size: 1
+  lr: 3e-5
+  peft: true
+  quantization: int4
+  target_modules: all-linear
+  padding: right
+  optimizer: adamw_torch
+  scheduler: linear
+  gradient_accumulation: 2
+  mixed_precision: fp16
+
+
+task: llm-sft
+log: tensorboard
+backend: local
+
+data:
+  path: ./data
+  train_split: train
+  valid_split: null
+  chat_template: tokenizer
+  column_mapping:
+    text_column: massage
