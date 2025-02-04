@@ -1,0 +1,34 @@
+task: llm-sft
+base_model: mistralai/Mistral-Small-24B-Instruct-2501
+project_name: Mistral-Nemo-Vitalka
+log: tensorboard
+backend: local
+
+data:
+  path: ./data
+  train_split: train
+  valid_split: null
+  chat_template: tokenizer
+  column_mapping:
+    text_column: massage
+
+params:
+  block_size: 1024
+  model_max_length: 8192
+  max_prompt_length: 512
+  epochs: 20
+  batch_size: 2
+  lr: 3e-5
+  peft: true
+  quantization: int4
+  target_modules: all-linear
+  padding: right
+  optimizer: adamw_torch
+  scheduler: linear
+  gradient_accumulation: 4
+  mixed_precision: fp16
+
+hub:
+  username: Tatanos
+  token: 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
+  push_to_hub: true
