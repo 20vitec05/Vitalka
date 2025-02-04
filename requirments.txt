@@ -1,0 +1,12 @@
+$ conda create -n autotrain python=3.10
+$ conda activate autotrain
+$ pip install autotrain-advanced
+$ pip install transformers
+$ conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
+$ conda install -c "nvidia/label/cuda-12.1.0" cuda-nvcc
+$ conda install xformers -c xformers
+$ python -m nltk.downloader punkt
+$ pip install flash-attn --no-build-isolation # if you want to use flash-attn
+$ pip install deepspeed # if you want to use deepspeedtransformers
+
+Cuda 12.6
